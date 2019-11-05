@@ -54,6 +54,10 @@ https://github.com/yama/wp_base_theme/blob/master/base/functions.inc.php
 
 複数の記事を取得。ほぼWP_Queryのエイリアス。
 
+## datef($format, $datetime=null, $default='')
+
+投稿日時を任意のフォーマットで出力。フォーマットはdate()方式・strftime()方式どちらも使えて、フォーマット文字列に `%` が含まれるかどうかで判定する。値がない場合に1970-01-01にならないよう、デフォルト値を指定できる。
+
 ### route($route)
 
 後述。
