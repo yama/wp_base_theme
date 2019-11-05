@@ -41,7 +41,7 @@ https://github.com/yama/wp_base_theme/blob/master/base/functions.inc.php
 
 ### url()
 
-$_SERVER\['REQUEST_URI'\]をたくさん書くと圧迫感を感じるため簡単にした。理由はそれだけ。でもroute()関数を作ったおかげで、今はそれほど恩恵はない。
+ルーティング記述で$_SERVER\['REQUEST_URI'\]をたくさん書くと圧迫感を感じるため簡単にした。理由はそれだけ。でもroute()関数を作ったおかげで、今はそれほど恩恵はない。
 
 ## 処理の流れ
 
