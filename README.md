@@ -81,7 +81,7 @@ https://github.com/yama/wp_base_theme/blob/master/base/routes.php
 routes.php でURLとテンプレートファイルの紐付けを行なう。
 
 ```
-if(route('/*') && !is_404()) {
+if(route('/*') && is_singular()) {
     return get_included_contents('tpl/sample/detail.html');
 }
 ```
