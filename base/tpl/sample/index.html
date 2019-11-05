@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title><?php echo get_option('blogname'); ?></title>
+    <meta name="description" content="<?php echo get_option('blogdescription'); ?>">
+</head>
+<body>
+    <h1><?php echo get_option('blogname'); ?></h1>
+    <ul>
+    <?php
+        $posts = posts(array( 'post_status' => 'publish' ));
+        foreach($posts as $post) {
+            echo sprintf(
+                '<li><a href="%s">%s</a></li>'
+                , get_permalink($post->ID)
+                , $post->post_title);
+        }
+    ?>
+    </ul>
+</body>
+</html>

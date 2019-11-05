@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title><?php echo post('post_title'); ?></title>
+    <meta name="description" content="<?php echo post('post_excerpt'); ?>">
+</head>
+<body>
+    <?php echo do_shortcode(post('post_content')); ?>
+</body>
+</html>
