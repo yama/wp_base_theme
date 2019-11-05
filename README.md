@@ -23,15 +23,15 @@ https://github.com/yama/wp_base_theme/blob/master/base/functions.inc.php
 
 記事のタイトルや本文などを取得。
 
-## posts($args=array('post_status'=>'publish'))
+### posts($args=array('post_status'=>'publish'))
 
 複数の記事を取得。ほぼWP_Queryのエイリアス。
 
-## route($route)
+### route($route)
 
 後述。
 
-## url()
+### url()
 
 $_SERVER\['REQUEST_URI'\]をたくさん書くと圧迫感を感じるため簡単にした。理由はそれだけ。
 
