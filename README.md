@@ -24,6 +24,22 @@
 * よく観察すると分かっていただけると思うが、当テーマ自体には高度な仕込みはない。「WordPressをこんなふうに使ってもいいのではないか？」を、実際に動作するスクリプトで表現するとこうなった
 * 名前を募集中。名前を考えるのが苦手なので
 
+## テンプレート実例
+
+```html
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title><?php echo post('post_title'); ?></title>
+    <meta name="description" content="<?php echo post('post_excerpt'); ?>">
+</head>
+<body>
+    <?php echo do_shortcode(post('post_content')); ?>
+</body>
+</html>
+```
+
 ## 使える関数
 
 https://github.com/yama/wp_base_theme/blob/master/base/functions.inc.php
