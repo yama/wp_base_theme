@@ -71,4 +71,4 @@ routes.php でURLとテンプレートファイルの紐付けを行なう。rou
 include('../index.php');
 ```
 
-上記内容の `index.php` を作成してディレクトリに配置すると、WordPressのエンドポイントとして動作する。
+上記内容の `index.php` を作成してディレクトリに配置すると、WordPressのエンドポイントとして動作する。既存のindex.htmlはテーマフォルダ内に移動してテンプレートとして使う。
