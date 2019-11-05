@@ -51,7 +51,7 @@ https://github.com/yama/wp_base_theme/blob/master/base/functions.php
 
 https://github.com/yama/wp_base_theme/blob/master/base/index.php
 
-そしてここが重要。index.phpを処理する。やってることはroutes.phpの結果を表示しているだけで、他には何もしない。single.phpなど、WordPressのテーマを構成する上で意味のあるファイル名を持つファイルがないため、index.phpが全てのリクエストを受け取る。
+ここが重要。index.phpを処理する。やってることはroutes.phpの結果を表示しているだけで、他には何もしない。single.phpなど、WordPressのテーマを構成する上で意味のあるファイル名を持つファイルがないため、index.phpが全てのリクエストを受け取る。
 
 https://github.com/yama/wp_base_theme/blob/master/base/routes.php
 
