@@ -78,7 +78,23 @@ routes.phpが返す結果を出力するだけで、他には何もしない。s
 
 https://github.com/yama/wp_base_theme/blob/master/base/routes.php
 
-routes.php でURLとテンプレートファイルの紐付けを行なう。route()関数の値の末尾に `*` がついている場合は前方一致でURLを判定する。ついていない場合は完全一致。ただし `/` を指定した場合は `/index.html` かどうかも判定する。
+routes.php でURLとテンプレートファイルの紐付けを行なう。
+
+```
+if(route('/*') && !is_404()) {
+    return get_included_contents('tpl/sample/detail.html');
+}
+```
+
+route()関数の値の末尾に `*` がついている場合は前方一致でURLを判定する。
+
+```
+if(route('/')) {
+    return get_included_contents('tpl/sample/index.html');
+}
+```
+
+ついていない場合は完全一致。ただし `/` を指定した場合は `/index.html` かどうかも判定する。
 
 これだけなので、処理は超軽い。けど、ob_set()関数の中身に自前でキャッシュ処理を組み込めばさらに軽量化できる。
 
