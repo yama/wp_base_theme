@@ -32,6 +32,22 @@ function route($route) {
     return (url()===$route);
 }
 
+function datef($format, $datetime=null, $default='') {
+    if(!$datetime) {
+        return $default;
+    }
+    if($datetime === null) {
+        $datetime = time();
+    }
+    if(!preg_match('/^[0-9]+$/', $datetime)) {
+        $datetime = strtotime($datetime);
+    }
+    if(strpos($format,'%')!==false) {
+        return strftime($format, $datetime);
+    }
+    return date($format, $datetime);
+}
+
 function get_included_contents($tpl_path) {
     ob_start();
     include(__DIR__ . '/' . $tpl_path);
