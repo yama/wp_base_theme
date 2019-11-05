@@ -10,7 +10,7 @@
 * WP REST APIでページをチャチャッと作る感覚に近い
 * でもそこそこ複雑で本格的なサイトを作るのにも向いてるはず
 * [こういうテンプレート](base/tpl/sample/detail.html)を作ることができる
-* WordPressではお約束のsingle.phpとかheader.phpとかを使わない
+* WordPressではお約束のsingle.phpとかheader.phpとかを全く使わない
 * URLルーティングでテンプレートファイルと紐付けるため、ページごとに自由にテンプレートを割り当てることができる
 * 出力を整形できる
 * 既存の静的htmlページとの共存が簡単
