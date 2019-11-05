@@ -48,7 +48,7 @@ https://github.com/yama/wp_base_theme/blob/master/base/functions.inc.php
 
 https://github.com/yama/wp_base_theme/blob/master/base/functions.php
 
-まず functions.phpにリーチするが、主に関数の読み込みと出力のバッファ処理を行なうだけ。
+まず functions.phpにリーチするが、主に関数の読み込みと出力のバッファ処理を行なうだけ。バッファ処理も必須ではないので、ほぼ何もしてない。
 
 https://github.com/yama/wp_base_theme/blob/master/base/index.php
 
