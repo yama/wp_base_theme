@@ -9,7 +9,8 @@
 * viewとルーティング直結の簡易フレームワークのようなもの
 * ルール少なめ
 * WordPressを使って普通のサイトを今すぐに作ってほしい。という案件に向いてる
-* WordPressではお約束のsingle.phpとかheader.phpとかを全く使わない
+* WordPressではお約束のsingle.phpとかcategory.phpとかを全く使わない
+* 当テーマを使う意味は薄れるがsingle.phpとかcategory.phpとかを使ってもよい
 * いわゆるテンプレート階層ルールを意識しないので、WP REST APIでページをチャチャッと作る感覚に近い
 * でもそこそこ複雑で本格的なサイトを作るのにも向いてるはず
 * [こういうテンプレート](base/tpl/sample/detail.html)を作ることができる
