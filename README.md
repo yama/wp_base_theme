@@ -46,23 +46,33 @@ https://github.com/yama/wp_base_theme/blob/master/base/functions.inc.php
 
 利用必須ではないが、上記にいくつか関数を用意している。分かりやすい関数名のヘルパーを使って1行か2行書くだけで解決してしまうLaravel感を意識している。
 
-### post($key=null, $default=null)
+```
+post($key=null, $default=null)
+```
 
 記事のタイトルや本文などを取得。
 
-### posts($args=array('post_status'=>'publish'))
+```
+posts($args=array('post_status'=>'publish'))
+```
 
 複数の記事を取得。ほぼWP_Queryのエイリアス。
 
-### datef($format, $datetime=null, $default='')
+```
+datef($format, $datetime=null, $default='')
+```
 
 投稿日時を任意のフォーマットで出力。フォーマットはdate()方式・strftime()方式どちらも使えて、フォーマット文字列に `%` が含まれるかどうかで判定する。値がない場合に1970-01-01にならないよう、デフォルト値を指定できる。
 
-### route($route)
+```
+route($route)
+```
 
 後述。
 
-### url()
+```
+url()
+```
 
 ルーティング記述で$_SERVER\['REQUEST_URI'\]をたくさん書くと圧迫感を感じるため簡単にした。理由はそれだけ。でもroute()関数を作ったおかげで、今はそれほど恩恵はない。
 
