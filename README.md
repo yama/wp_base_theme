@@ -46,19 +46,33 @@ https://github.com/yama/wp_base_theme/blob/master/base/functions.inc.php
 
 利用必須ではないが、上記にいくつか関数を用意している。分かりやすい関数名のヘルパーを使って1行か2行書くだけで解決してしまうLaravel感を意識している。
 
-### post($key=null, $default=null)
+```
+post($key=null, $default=null)
+```
 
 記事のタイトルや本文などを取得。
 
-### posts($args=array('post_status'=>'publish'))
+```
+posts($args=array('post_status'=>'publish'))
+```
 
 複数の記事を取得。ほぼWP_Queryのエイリアス。
 
-### route($route)
+```
+datef($format, $datetime=null, $default='')
+```
+
+投稿日時を任意のフォーマットで出力。フォーマットはdate()方式・strftime()方式どちらも使えて、フォーマット文字列に `%` が含まれるかどうかで判定する。値がない場合に1970-01-01にならないよう、デフォルト値を指定できる。
+
+```
+route($route)
+```
 
 後述。
 
-### url()
+```
+url()
+```
 
 ルーティング記述で$_SERVER\['REQUEST_URI'\]をたくさん書くと圧迫感を感じるため簡単にした。理由はそれだけ。でもroute()関数を作ったおかげで、今はそれほど恩恵はない。
 
@@ -74,7 +88,23 @@ routes.phpが返す結果を出力するだけで、他には何もしない。s
 
 https://github.com/yama/wp_base_theme/blob/master/base/routes.php
 
-routes.php でURLとテンプレートファイルの紐付けを行なう。route()関数の値の末尾に `*` がついている場合は前方一致でURLを判定する。ついていない場合は完全一致。ただし `/` を指定した場合は `/index.html` かどうかも判定する。
+routes.php でURLとテンプレートファイルの紐付けを行なう。
+
+```
+if(route('/*') && is_singular()) {
+    return get_included_contents('tpl/sample/detail.html');
+}
+```
+
+route()関数の値の末尾に `*` がついている場合は前方一致でURLを判定する。
+
+```
+if(route('/')) {
+    return get_included_contents('tpl/sample/index.html');
+}
+```
+
+ついていない場合は完全一致。ただし `/` を指定した場合は `/index.html` かどうかも判定する。
 
 これだけなので、処理は超軽い。けど、ob_set()関数の中身に自前でキャッシュ処理を組み込めばさらに軽量化できる。
 
@@ -92,11 +122,3 @@ include('../index.php');
 ```
 
 上記内容の `index.php` を作成して任意のサブディレクトリに配置すると、WordPressのエンドポイントとして動作する。既存のindex.htmlはテーマフォルダ内に移動し一部を動的化した上でテンプレートとして使う。こうすることで、静的htmlファイルで構成されたサイトの一部を必要に応じていくつでもWordPress化できる。
-
-## 注意点
-
-当テーマ自体の問題ではないが、当テーマを使うと複雑な構成のサイトを作りやすいため、陥りやすい罠がある。
-
-[https://ja.wordpress.org/support/topic/カテゴリーの重複スラッグ設定](https://ja.wordpress.org/support/topic/%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E3%83%BC%E3%81%AE%E9%87%8D%E8%A4%87%E3%82%B9%E3%83%A9%E3%83%83%E3%82%B0%E8%A8%AD%E5%AE%9A/)
-
-WordPressは基本的に、同じ名前のカテゴリーを複数作ることができない。親カテゴリーが違っていても重複不可。処理面をさんざん作り込んでから気づきがちだが、場合によっては素直にマルチサイト設定で運用する。
