@@ -49,9 +49,17 @@ function datef($format, $datetime=null, $default='') {
 }
 
 function get_included_contents($tpl_path) {
+    $full_path = get_template_directory() . '/app/views/'.ltrim($tpl_path,'/');
+    if(!is_file($full_path)) {
+        exit('template not found!');
+    }
     ob_start();
-    include(__DIR__ . '/' . $tpl_path);
+    include($full_path);
     return ob_get_clean();
+}
+
+function rewrite_permalink($link) {
+	return $link;
 }
 
 function ob_set() {
