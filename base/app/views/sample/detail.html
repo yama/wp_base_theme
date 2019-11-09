@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo post('post_title'); ?></title>
-    <meta name="description" content="<?php echo post('post_excerpt'); ?>">
+    <?php wp_head();?>
 </head>
 <body>
     <?php echo do_shortcode(post('post_content')); ?>
+    <?php wp_footer();?>
 </body>
 </html>
