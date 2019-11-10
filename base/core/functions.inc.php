@@ -27,6 +27,11 @@ function posts($args=array('post_status'=>'publish')) {
     return $posts;
 }
 
+function wpdb() {
+    global $wpdb;
+    return $wpdb;
+}
+
 function route($route) {
     if($route === '/') {
         return (url()==='/' || strpos(url(),'/index.')===0);
